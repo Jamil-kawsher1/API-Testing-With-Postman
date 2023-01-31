@@ -13,19 +13,6 @@ Finally, I have generated report using Newman.
 
 - [@Jamil-kawsher1](https://www.github.com/Jamil-kawsher1)
 
-## Tools Used
-- Jmeter
-
-## Request I have Covered
-
-1. Login to user
-2. Create a new agent
-3. Give balance to the newly created agent from system
-4. Create a customer
-5. Search the newly created user by phone number
-6. Deposit balance to the customer from the agent
-7. Withdraw some money from the agent
-8. Delete the user
 
 ## How to run this project
 
@@ -33,26 +20,39 @@ Finally, I have generated report using Newman.
 - Then run the follwing command 
 
 ```bash
- $ jmeter -n -t Jmeter Performance test using API Chaining.jmx -l Dmoney-Load-Test.csv -e -o Reports
+  npm i
+  npm run report.js
 ```
+## Tools Used
+- Postman
+- Newman
+
+
+## Test Case:
+https://docs.google.com/spreadsheets/d/1TlqU_8-HCT_h76P69iPLE_aJhjsKX7g9/edit?usp=sharing&ouid=105413695096846736430&rtpof=true&sd=true
+
+## Bug And Improvement Report:
+https://docs.google.com/spreadsheets/d/1GpIxce69jw1vQdlDSwo0Bdi1SlfEMjH0/edit?usp=sharing&ouid=105413695096846736430&rtpof=true&sd=true
+
+# Postman documentation:
+https://documenter.getpostman.com/view/23351657/2s8ZDbX1VA
+
+# Newman Full Live Report Link
+https://newmanlive.netlify.app/
+
+### ScreenShot of Newman Report
+![image](https://user-images.githubusercontent.com/42008531/214326339-ffb3d907-c97c-4ba5-bbfc-73131a68322f.png)
+![image](https://user-images.githubusercontent.com/42008531/214326554-bfbc94b1-6b9a-4f72-acc8-8fb88dd7ed8d.png)
 
 
 
+## Positive and Negative case are Created for Follwing Scenraio
 
-## Requests ScreenShot:
-![image](https://user-images.githubusercontent.com/42008531/215797249-68846705-e712-4ca7-8d61-c008d0567b65.png)
-
-
-## Genarated HTML Report:
-![image](https://user-images.githubusercontent.com/42008531/215797749-308c1b5c-7ceb-4a6e-a4c4-24fcfb55c692.png)
-![image](https://user-images.githubusercontent.com/42008531/215797920-9099178b-0278-46e0-9439-aec27aef7174.png)
-
-# Summary Report:
-![image](https://user-images.githubusercontent.com/42008531/215798969-059fbaf0-56b2-4514-abab-393e0824bb22.png)
-
-
-
-
-
-
-
+1. Admin creates an agent and random 2 customers
+2. Deposit some money from SYSTEM account to the agent
+3. Agent deposit to any of 1 customer
+4. The customer checks balance
+5. Then withdraw any amount from the agent
+6. And send money to the other customer
+7. Then the customer will check statement
+8. For each transaction, assert expected balance
